@@ -1,0 +1,26 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+	<h:form>
+		<div>
+			<h:commandLink value="#{messages['topics.titre']}" action="topics"
+				rendered="#{loggedUser != null}" />
+		</div>
+		<div>
+			<h:commandLink value="#{messages['ajoutTopic.title']}"
+				action="ajoutTopic" rendered="#{loggedUser != null}" />
+		</div>
+		<div >
+			<ui:include src="localeController.xhtml" />
+		</div>
+		<div >
+			<h:outputText value="#{loggedUser.login}"
+				rendered="#{loggedUser != null}" />
+		</div>
+		<div >
+			<h:commandLink value="#{messages['action.deconnecter']}"
+				action="#{userController.logout}" rendered="#{loggedUser != null}" />
+		</div>
+	</h:form>
+</ui:composition>

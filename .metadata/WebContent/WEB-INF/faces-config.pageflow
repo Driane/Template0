@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf145435804302811" configfile="/Template0/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="index.xhtml" x="122" y="370" id="pf15023681148190" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15023681148191 pf15023681148192" path="/index.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="login.xhtml" x="338" y="178" id="pf15023681148193" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15023681148191" path="/login.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="inscription.xhtml" x="338" y="562" id="pf15023681148204" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15023681148205" inlinks="pf15023681148192" path="/inscription.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="topics.xhtml" x="554" y="562" id="pf15023681148206" referenceLink="//@navigationRule.1/@navigationCase.0/@toViewId|" inlinks="pf15023681148205" path="topics.xhtml"/>
+  <links id="pf15023681148191" target="pf15023681148193" source="pf15023681148190" outcome="login" redirect="true"/>
+  <links id="pf15023681148192" target="pf15023681148204" source="pf15023681148190" outcome="inscription"/>
+  <links id="pf15023681148205" target="pf15023681148206" source="pf15023681148204" outcome="topics"/>
+</pageflow:Pageflow>

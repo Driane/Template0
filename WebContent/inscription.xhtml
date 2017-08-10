@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	template="/template/template.xhtml">
+
+	<ui:define name="title">#{messages['action.inscrire']}</ui:define>
+
+	<ui:define name="body">
+
+		<h:form>
+			<ui:decorate template="/template/edit.xhtml">
+				<ui:param name="idInput" value="loginInput" />
+				<h:outputText value="#{messages['membre.login']}" />
+				<h:inputText id="loginInput" required="true"
+					value="#{userController.membre.login}"
+					label="#{messages['membre.login']}"
+					validator="#{userController.validateLogin}" />
+			</ui:decorate>
+
+			<ui:decorate template="/template/edit.xhtml">
+				<ui:param name="idInput" value="passwordInput" />
+				<h:outputText value="#{messages['membre.password']}" />
+				<h:inputSecret id="passwordInput"
+					value="#{userController.membre.password}" required="true"
+					label="#{messages['membre.password']}">
+					<f:validateLength minimum="4" />
+				</h:inputSecret>
+			</ui:decorate>
+
+			<ui:decorate template="/template/edit.xhtml">
+				<ui:param name="idInput" value="ageInput" />
+				<h:outputText value="#{messages['membre.age']}" />
+				<h:inputText id="ageInput" value="#{userController.membre.age}"
+					label="#{messages['membre.age']}">
+					<f:validateLongRange minimum="18" />
+				</h:inputText>
+			</ui:decorate>
+
+			<ui:decorate template="/template/edit.xhtml">
+				<ui:param name="idInput" value="genreInput" />
+				<h:outputText value="#{messages['membre.genre']}" />
+				<h:selectOneMenu id="genreInput"
+					value="#{userController.membre.genre}">
+					<f:selectItem itemValue="FEMME"
+						itemLabel="#{messages['membre.genre.femme']}" />
+					<f:selectItem itemValue="HOMME"
+						itemLabel="#{messages['membre.genre.homme']}" />
+				</h:selectOneMenu>
+			</ui:decorate>
+
+			<h:panelGrid columns="2">
+				<h:commandButton action="index" value="#{messages['action.cancel']}"
+					immediate="true" />
+				<h:commandButton action="#{userController.doInscription}"
+					value="#{messages['action.inscrire']}" />
+			</h:panelGrid>
+		</h:form>
+	</ui:define>
+</ui:composition>
+<!-- 	<ui:define name="footer"><h1>New footer</h1></ui:define> -->

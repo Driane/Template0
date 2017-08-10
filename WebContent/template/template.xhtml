@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<f:view xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html" contentType="text/html">
+
+	<h:html>
+	<h:head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<ui:insert name="head" />
+	</h:head>
+	<h:body>
+		<div style="border-style: solid; border-color: #ff0000;">
+			<ui:include src="menu.xhtml">
+			</ui:include>
+		</div>
+		<h1>
+			<ui:insert name="title" />
+		</h1>
+		<div style="border-style: solid; border-color: #0000ff;">
+			<div>
+				<h:messages id="messages" styleClass="message"
+					errorClass="errormsg" infoClass="infomsg" warnClass="warnmsg" />
+
+				<table width="100%">
+					<tr>
+						<td><ui:insert name="body" /></td>
+
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<ui:insert name="footer">
+			<div style="border-style: solid; border-color: #00ff00;">
+				default footer Powered by JSF 2 !!</div>
+		</ui:insert>
+	</h:body>
+	</h:html>
+</f:view>
+
+
+
+

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
+	version="2.2">
+	<application>
+		<resource-bundle>
+			<base-name>i18n.labels</base-name>
+			<var>messages</var>
+		</resource-bundle>
+		<locale-config>
+			<default-locale>fr</default-locale>
+			<supported-locale>en</supported-locale>
+			<supported-locale>fr</supported-locale>
+		</locale-config>
+	</application>
+
+	<validator>
+		<validator-id>topicValidator</validator-id>
+		<validator-class>org.formation.jsf.validator.TopicValidator</validator-class>
+	</validator>
+
+
+	<navigation-rule>
+		<from-view-id>/index.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>login</from-outcome>
+			<to-view-id>/login.xhtml</to-view-id>
+			<redirect></redirect>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inscription</from-outcome>
+			<to-view-id>/inscription.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/inscription.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>topics</from-outcome>
+			<to-view-id>topics.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+
+	<!-- <lifecycle><phase-listener>org.formation.jsf.listener.MyPhaseListener</phase-listener></lifecycle> -->
+</faces-config>
